@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 public class Exercise03 {
 
   /**
@@ -8,9 +10,16 @@ public class Exercise03 {
    *                String array: [Paris, London, New York, Stockholm]
    *                Sort string array: [London, New York, Paris, Stockholm]
    */
-  public static void ex3() {
+  public static void ex3() {String[] cities = {"Paris", "London", "New York", "Stockholm"};
+    Arrays.sort(cities);
+    for (String city : cities) {
+      System.out.println(city);
+    }
 
   }
+
+
+
 
 
 }

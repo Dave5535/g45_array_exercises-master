@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Scanner;
+
 public class Exercise11 {
 
   /**
@@ -12,7 +14,22 @@ public class Exercise11 {
    * they are printed. You need to change the way they are stored in the
    * array.
    */
-  public static void ex11() {
+  public static void ex11() { int[] sorageValue = {1,2,3};
+    //store that value  0,1,2
+    Scanner scanner = new Scanner (System.in);
+    System.out.println("__________________");
+    System.out.println("    0,1,2 ");
+    System.out.println(" ");
+    System.out.println(" what do you want to switch the 1 whit 0/2?");
+    int scan = scanner.nextByte();
+
+
+    //  if ( 0 < scan ){
+    //int scan = sorageValue[2]; }
+
+// What do you want to do ? ( move the 1 to the left / move the 1 to the right )
+    // print 0,1,2
+    // move forward / backwards  .. move the original 0,1,2 to ( 1,0,2 / 0,2,1)
 
   }
 

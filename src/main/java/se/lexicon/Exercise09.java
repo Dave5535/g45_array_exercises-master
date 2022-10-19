@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 public class Exercise09 {
 
   /**
@@ -8,6 +10,19 @@ public class Exercise09 {
    * solution to “expand” the array
    */
   public static void ex9() {
+    String[] names = new String[0]; // This is an empty Array
+    addArrayExName(names, "Marcus"); // This create a new Array whit in this case a new name.
+    addArrayExName(names, "Mikael");
+    addArrayExName(names, "Mathias");
+  }
+
+  public static void addArrayExName(String[] source, String name) {
+
+    String[] newArray = Arrays.copyOf(source, source.length + 1);
+    newArray[newArray.length - 1] = name;
+    for (String element : newArray) {
+      System.out.println(element);
+    }
 
   }
 
