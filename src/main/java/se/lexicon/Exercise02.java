@@ -7,10 +7,6 @@ public class Exercise02 {
    * If the element does not exist your method should return -1 as value.
    * Expected output: Index position of number 5 is: 2.
    */
-  public static void ex2() {
-
-  }
-
 
 
 }
