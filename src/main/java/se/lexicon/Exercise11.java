@@ -16,35 +16,65 @@ public class Exercise11 {
      * array.
      */
 
-
-
+// create an empty array to add value from user's input
+    static String[] initArray = new String[0];
     public static void ex11() {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("How many numbers do you want in the array? ");
-        int n= sc.nextInt();
-        int[] arr = new int[n];
-
-        System.out.println("Enter " + n + " integers ('666' will end program): ");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-
-            if (arr[i] == 666) {
-                break;
-            } else if (arr[i] + 665 == n) {
-                break;
-            }
-        }
-
-        System.out.println("numbers in reverse: ");
-        for (int i = arr.length - 1; i >= 0; i--)
-            System.out.println(arr[i] + " ");
-
+        int userInput = getUserInput();
+        initArray = addNumberToArray(initArray, userInput);
+        addMoreNumber(initArray);
+        printArray(initArray);
+        reverseArray(initArray,initArray.length);
     }
 
+    // create a method to take input from user
+    public static int getUserInput () {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number and enter 0 to exit: ");
+
+        int userInput = scanner.nextInt();
+        return userInput;
+    }
+    // create a method to add number to original array
+    public static String[] addNumberToArray (String[] originArray, int newNumber) {
+        String[] newArray = Arrays.copyOf(originArray, originArray.length + 1);
+        newArray[newArray.length - 1] = String.valueOf(newNumber);
+        return newArray;
+    }
+
+    // create a while-loop method to add more number and
+    // store input from user to the empty array until user choose number 0 to stop adding number.
+    public static String[] addMoreNumber (String[] arrays) {
+        boolean userContinue = true;
+        while (userContinue) {
+            int userInput = getUserInput();
+            initArray = addNumberToArray(initArray, userInput);
+            if (userInput == 0) {
+                break;
+            } else userContinue = true;
+        }
+        return arrays;
+    }
+    //create a method to print array
+    public static String[] printArray(String[] array) {
+        System.out.println("Array: ");
+        for (int i = 0; i < array.length-1; i++) {
+            System.out.println(array[i]);
+        }
+        return array;
+    }
+    //Create a method to reverse the array
+    public static String[] reverseArray(String[] array, int n) {
+        String[] newArray = new String[n];
+        int j = n;
+        for (int i = 0; i < n; i++) {
+            newArray[j-1] = array[i];
+            j = j - 1;
+        }
+        System.out.println("Reverse array: ");
+        for (int k = 1; k < n; k++) {
+            System.out.println(newArray[k]);
+        }
+        return array;
+    }
 }
-
-
-
-
 
